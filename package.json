@@ -4,8 +4,9 @@
   "description": "Padrões de projeto com Nodejs + Typescript",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index.ts",
-    "test": "jest"
+    "start": "nodemon ./src/creational/singleton/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "engines": {
     "node": "16",
