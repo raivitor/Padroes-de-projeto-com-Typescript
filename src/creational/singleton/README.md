@@ -1,15 +1,16 @@
-- Objetivo: Garantir que uma classe só tenha uma única instancia, e prover um ponto de acesso gloval a ela.
+- Objetivo: Garantir que uma classe só tenha uma única instancia, e prover um ponto de acesso global a ela.
 
-- Problemas:
-
+- Problemas que resolve:
   - Como posso garantir que uma classe tenha uma única instancia?
   - Como fazer com que essa instanca unica possa ser acessível globalmente?
-
 - Solução:
-
   - Esconder o construtor dessa classe
   - Definir um ponto de criação estático que retone uma única instancia
-
 - Singleton vs Monostate
   - Singleton: Deixa mais explicito
   - Monostate: Dá para trabalhar com interfaces
+- Problema que cria:
+  - Viola o princípio de responsabilidade única. O padrão resolve dois problemas de uma só vez.
+  - O padrão Singleton pode mascarar um design ruim, por exemplo, quando os componentes do programa sabem muito sobre cada um
+  - O padrão requer tratamento especial em um ambiente multithreaded para que múltiplas threads não possam criar um objeto singleton várias vezes.
+  - Pode ser difícil realizar testes unitários do código cliente do Singleton porque muitos frameworks de teste dependem de herança quando produzem objetos simulados. Já que o construtor da classe singleton é privado e sobrescrever métodos estáticos é impossível na maioria das linguagem, você terá que pensar em uma maneira criativa de simular o singleton. Ou apenas não escreva os testes. Ou não use o padrão Singleton.
